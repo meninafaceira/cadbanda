@@ -8,14 +8,14 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
+  <!-- Supabase JS Client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Google Fonts Inter -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- ImgBB Upload Script -->
-  <script async src="https://imgbb.com/upload.js"></script>
 
   <script>
     tailwind.config = {
@@ -24,39 +24,21 @@
         extend: {
           colors: {
             brand: {
-              50: '#f0fdf4',
-              100: '#dcfce7',
-              400: '#4ade80',
-              500: '#22c55e',
-              600: '#16a34a',
-              700: '#15803d',
-              900: '#14532d',
+              50: '#f0fdf4', 100: '#dcfce7', 400: '#4ade80',
+              500: '#22c55e', 600: '#16a34a', 700: '#15803d', 900: '#14532d',
             },
-            darkbg: '#0f172a',
-            darkcard: '#1e293b'
+            darkbg: '#0f172a', darkcard: '#1e293b'
           },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-          }
+          fontFamily: { sans: ['Inter', 'sans-serif'] }
         }
       }
     }
   </script>
 
   <style>
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
-    .no-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-    body {
-      background-color: #0b0f19;
-      color: #f8fafc;
-      user-select: none;
-      -webkit-tap-highlight-color: transparent;
-    }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    body { background-color: #0b0f19; color: #f8fafc; user-select: none; -webkit-tap-highlight-color: transparent; }
   </style>
 </head>
 <body class="font-sans min-h-screen pb-20 md:pb-0 antialiased selection:bg-brand-500 selection:text-white">
@@ -89,9 +71,7 @@
         <div>
           <label class="block text-xs font-bold text-slate-300 mb-1 uppercase tracking-wider">Usuário</label>
           <div class="relative">
-            <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-500">
-              <i class="fa-solid fa-user text-sm"></i>
-            </span>
+            <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-500"><i class="fa-solid fa-user text-sm"></i></span>
             <input type="text" id="loginUser" required placeholder="Digite seu usuário" class="w-full pl-9 pr-3 py-2.5 bg-slate-800/80 border border-slate-700 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-500">
           </div>
         </div>
@@ -99,16 +79,13 @@
         <div>
           <label class="block text-xs font-bold text-slate-300 mb-1 uppercase tracking-wider">Senha</label>
           <div class="relative">
-            <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-500">
-              <i class="fa-solid fa-lock text-sm"></i>
-            </span>
+            <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-500"><i class="fa-solid fa-lock text-sm"></i></span>
             <input type="password" id="loginPass" required placeholder="Digite sua senha" class="w-full pl-9 pr-3 py-2.5 bg-slate-800/80 border border-slate-700 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-500">
           </div>
         </div>
 
-        <button type="submit" class="w-full py-3 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold rounded-xl text-sm shadow-lg shadow-brand-500/20 active:scale-98 transition-all flex items-center justify-center gap-2">
-          <i class="fa-solid fa-right-to-bracket"></i>
-          Entrar no Sistema
+        <button type="submit" class="w-full py-3 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold rounded-xl text-sm shadow-lg shadow-brand-500/25 active:scale-98 transition-all flex items-center justify-center gap-2">
+          <i class="fa-solid fa-right-to-bracket"></i> Entrar no Sistema
         </button>
       </form>
 
@@ -117,9 +94,7 @@
         <div>
           <label class="block text-xs font-bold text-slate-300 mb-1 uppercase tracking-wider">Nome de Usuário</label>
           <div class="relative">
-            <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-500">
-              <i class="fa-solid fa-user-plus text-sm"></i>
-            </span>
+            <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-500"><i class="fa-solid fa-user-plus text-sm"></i></span>
             <input type="text" id="regUser" required placeholder="Escolha um usuário" class="w-full pl-9 pr-3 py-2.5 bg-slate-800/80 border border-slate-700 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-500">
           </div>
         </div>
@@ -127,29 +102,20 @@
         <div>
           <label class="block text-xs font-bold text-slate-300 mb-1 uppercase tracking-wider">Senha</label>
           <div class="relative">
-            <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-500">
-              <i class="fa-solid fa-key text-sm"></i>
-            </span>
+            <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-500"><i class="fa-solid fa-key text-sm"></i></span>
             <input type="password" id="regPass" required placeholder="Crie uma senha segura" class="w-full pl-9 pr-3 py-2.5 bg-slate-800/80 border border-slate-700 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-500">
           </div>
         </div>
 
-        <div class="bg-amber-500/10 border border-amber-500/20 rounded-xl p-3 text-[11px] text-amber-300 flex items-center gap-2">
-          <i class="fa-solid fa-triangle-exclamation text-base shrink-0"></i>
-          <span>Contas criadas terão perfil <strong>ARTISTA</strong>. Exclusões de cadastros são exclusivas do Administrador Geral.</span>
-        </div>
-
         <button type="submit" class="w-full py-3 bg-slate-100 hover:bg-white text-slate-950 font-bold rounded-xl text-sm shadow-md active:scale-98 transition-all flex items-center justify-center gap-2">
-          <i class="fa-solid fa-user-check"></i>
-          Concluir Cadastro
+          <i class="fa-solid fa-user-check"></i> Concluir Cadastro
         </button>
       </form>
     </div>
   </div>
 
-  <!-- ================= APP CONTAINER PRINCIPAL ================= -->
+  <!-- ================= APP CONTAINER ================= -->
   <div id="mainApp" class="max-w-4xl mx-auto hidden">
-
     <header class="sticky top-0 z-40 bg-slate-950/80 backdrop-blur-lg border-b border-slate-800/80 px-4 py-3 flex items-center justify-between">
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/20 text-brand-400 flex items-center justify-center font-bold">
@@ -158,271 +124,146 @@
         <div>
           <h1 class="text-base font-black tracking-tight text-white flex items-center gap-1.5">
             CAD BANDA
-            <span id="adminBadge" class="hidden text-[10px] font-extrabold bg-red-500/20 text-red-400 px-2 py-0.5 rounded-full border border-red-500/30">
-              ADMIN
-            </span>
+            <span id="adminBadge" class="hidden text-[10px] font-extrabold bg-red-500/20 text-red-400 px-2 py-0.5 rounded-full border border-red-500/30">ADMIN</span>
           </h1>
-          <p class="text-[11px] text-slate-400">Catálogo de Artistas & Contatos</p>
+          <p class="text-[11px] text-slate-400">Catálogo Nuvem Supabase</p>
         </div>
       </div>
-
-      <div class="flex items-center gap-2">
-        <div class="text-right hidden sm:block">
-          <p id="userNameDisplay" class="text-xs font-bold text-slate-200">Usuário</p>
-          <p id="userRoleDisplay" class="text-[10px] text-slate-400">Artista</p>
-        </div>
-        <button onclick="logout()" class="p-2 text-slate-400 hover:text-red-400 hover:bg-red-500/10 rounded-xl transition-all" title="Sair do sistema">
-          <i class="fa-solid fa-right-from-bracket text-base"></i>
-        </button>
-      </div>
+      <button onclick="logout()" class="p-2 text-slate-400 hover:text-red-400 hover:bg-red-500/10 rounded-xl transition-all" title="Sair"><i class="fa-solid fa-right-from-bracket text-base"></i></button>
     </header>
 
     <main class="p-4 md:p-6 space-y-6">
-
       <!-- ABA 1: CATÁLOGO -->
       <section id="secCatalog" class="space-y-5">
         <div class="space-y-3">
           <div class="relative">
-            <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-500">
-              <i class="fa-solid fa-magnifying-glass text-sm"></i>
-            </span>
+            <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-500"><i class="fa-solid fa-magnifying-glass text-sm"></i></span>
             <input type="text" id="searchInput" oninput="renderCatalog()" placeholder="Pesquisar banda, estilo ou cidade..." class="w-full pl-10 pr-4 py-3 bg-slate-900 border border-slate-800 rounded-2xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 shadow-inner">
           </div>
-
-          <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1" id="genreFilterBar">
-          </div>
+          <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1" id="genreFilterBar"></div>
         </div>
-
-        <div id="bandsGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        </div>
+        <div id="bandsGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
       </section>
 
-      <!-- ABA 2: NOVO CADASTRO -->
+      <!-- ABA 2: CADASTRO -->
       <section id="secRegister" class="hidden space-y-5">
         <div class="bg-slate-900 border border-slate-800 rounded-3xl p-5 md:p-6 shadow-xl">
           <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-800">
-            <div class="w-10 h-10 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center">
-              <i class="fa-solid fa-plus-circle text-lg"></i>
-            </div>
+            <div class="w-10 h-10 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center"><i class="fa-solid fa-plus-circle text-lg"></i></div>
             <div>
               <h2 class="text-lg font-bold text-white">Cadastrar Nova Banda</h2>
-              <p class="text-xs text-slate-400">Preencha os dados, foto e redes da banda/artista</p>
+              <p class="text-xs text-slate-400">Os dados serão salvos na nuvem do Supabase</p>
             </div>
           </div>
 
-          <form id="bandForm" onsubmit="saveBand(event)" class="space-y-4">
+          <form id="bandForm" onsubmit="saveBandToSupabase(event)" class="space-y-4">
             <input type="hidden" id="editBandId">
-
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label class="block text-xs font-bold text-slate-300 mb-1">NOME DA BANDA / ARTISTA *</label>
-                <input type="text" id="bandName" required placeholder="Ex: Wesley Safadão, Calcinha Preta..." class="w-full px-3.5 py-2.5 bg-slate-800/90 border border-slate-700 rounded-xl text-sm text-white focus:border-brand-500 focus:outline-none">
+                <label class="block text-xs font-bold text-slate-300 mb-1">NOME DA BANDA *</label>
+                <input type="text" id="bandName" required class="w-full px-3.5 py-2.5 bg-slate-800/90 border border-slate-700 rounded-xl text-sm text-white focus:border-brand-500 focus:outline-none">
               </div>
-
               <div>
                 <label class="block text-xs font-bold text-slate-300 mb-1">ESTILO MUSICAL *</label>
                 <select id="bandGenre" required class="w-full px-3.5 py-2.5 bg-slate-800/90 border border-slate-700 rounded-xl text-sm text-white focus:border-brand-500 focus:outline-none">
-                  <option value="">Selecione um estilo...</option>
-                  <option value="Pisadinha">Pisadinha</option>
-                  <option value="Arrocha">Arrocha</option>
-                  <option value="Piseiro">Piseiro</option>
-                  <option value="Brega">Brega</option>
-                  <option value="Seresta">Seresta</option>
-                  <option value="Calypso">Calypso</option>
-                  <option value="Forró">Forró</option>
-                  <option value="Sertanejo">Sertanejo</option>
-                  <option value="Pagode / Samba">Pagode / Samba</option>
-                  <option value="Pop / Rock">Pop / Rock</option>
-                  <option value="Axé / Reggae">Axé / Reggae</option>
-                  <option value="Gospel">Gospel</option>
-                  <option value="Outros">Outros</option>
+                  <option value="">Selecione...</option>
+                  <option value="Pisadinha">Pisadinha</option><option value="Arrocha">Arrocha</option><option value="Piseiro">Piseiro</option>
+                  <option value="Brega">Brega</option><option value="Seresta">Seresta</option><option value="Calypso">Calypso</option>
+                  <option value="Forró">Forró</option><option value="Sertanejo">Sertanejo</option><option value="Pagode / Samba">Pagode / Samba</option>
+                  <option value="Pop / Rock">Pop / Rock</option><option value="Axé / Reggae">Axé / Reggae</option><option value="Gospel">Gospel</option><option value="Outros">Outros</option>
                 </select>
               </div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label class="block text-xs font-bold text-slate-300 mb-1">NOME DO RESPONSÁVEL *</label>
-                <input type="text" id="bandContact" required placeholder="Ex: Empresário João" class="w-full px-3.5 py-2.5 bg-slate-800/90 border border-slate-700 rounded-xl text-sm text-white focus:border-brand-500 focus:outline-none">
+                <label class="block text-xs font-bold text-slate-300 mb-1">RESPONSÁVEL *</label>
+                <input type="text" id="bandContact" required class="w-full px-3.5 py-2.5 bg-slate-800/90 border border-slate-700 rounded-xl text-sm text-white focus:border-brand-500 focus:outline-none">
               </div>
-
               <div>
                 <label class="block text-xs font-bold text-slate-300 mb-1">CIDADE / UF *</label>
-                <input type="text" id="bandCity" required placeholder="Ex: Fortaleza / CE" class="w-full px-3.5 py-2.5 bg-slate-800/90 border border-slate-700 rounded-xl text-sm text-white focus:border-brand-500 focus:outline-none">
+                <input type="text" id="bandCity" required class="w-full px-3.5 py-2.5 bg-slate-800/90 border border-slate-700 rounded-xl text-sm text-white focus:border-brand-500 focus:outline-none">
               </div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label class="block text-xs font-bold text-slate-300 mb-1">WHATSAPP (DDD + NÚMERO) *</label>
-                <input type="text" id="bandWhatsapp" required placeholder="Ex: 85999998888" class="w-full px-3.5 py-2.5 bg-slate-800/90 border border-slate-700 rounded-xl text-sm text-white focus:border-brand-500 focus:outline-none">
+                <label class="block text-xs font-bold text-slate-300 mb-1">WHATSAPP *</label>
+                <input type="text" id="bandWhatsapp" required placeholder="85999998888" class="w-full px-3.5 py-2.5 bg-slate-800/90 border border-slate-700 rounded-xl text-sm text-white focus:border-brand-500 focus:outline-none">
               </div>
-
-              <!-- SELETOR DE FOTO COM COMPRESSÃO AUTOMÁTICA -->
               <div>
-                <div class="flex justify-between items-center mb-1">
-                  <label class="block text-xs font-bold text-slate-300">FOTO DA BANDA *</label>
-                  <span class="text-[10px] text-brand-400 font-semibold">(Otimização Automática)</span>
-                </div>
-                <input type="file" id="bandPhotoFile" accept="image/*" onchange="processAndPreviewImage(event)" class="w-full px-3 py-2 bg-slate-800/90 border border-slate-700 rounded-xl text-xs text-slate-300 file:mr-3 file:py-1 file:px-2.5 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-brand-500 file:text-slate-950 hover:file:bg-brand-600 cursor-pointer">
+                <label class="block text-xs font-bold text-slate-300 mb-1">FOTO DA BANDA</label>
+                <input type="file" id="bandPhotoFile" accept="image/*" class="w-full px-3 py-2 bg-slate-800/90 border border-slate-700 rounded-xl text-xs text-slate-300 file:mr-3 file:py-1 file:px-2.5 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-brand-500 file:text-slate-950 cursor-pointer">
                 <input type="hidden" id="bandPhotoUrl">
-                
-                <div id="imagePreviewContainer" class="hidden mt-2 flex items-center gap-3">
-                  <img id="imagePreview" class="w-14 h-14 object-cover rounded-xl border border-slate-700" src="" alt="Prévia">
-                  <span class="text-[11px] text-brand-400 font-semibold"><i class="fa-solid fa-check-circle"></i> Imagem otimizada pronta!</span>
-                </div>
               </div>
             </div>
 
-            <!-- REDES SOCIAIS & MÍDIA -->
             <div class="pt-2 border-t border-slate-800">
-              <h3 class="text-xs font-extrabold text-slate-400 uppercase tracking-wider mb-3">Redes Sociais e Plataformas de Mídia</h3>
+              <h3 class="text-xs font-extrabold text-slate-400 uppercase tracking-wider mb-3">Redes Sociais</h3>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div>
-                  <label class="block text-[11px] font-semibold text-emerald-400 mb-1">
-                    <i class="fa-solid fa-compact-disc"></i> SUA MÚSICA (URL)
-                  </label>
-                  <input type="url" id="bandSuaMusica" placeholder="https://suamusica.com.br/suabanda" class="w-full px-3 py-2 bg-slate-800/90 border border-slate-700 rounded-xl text-xs text-white focus:border-emerald-500 focus:outline-none">
-                </div>
-
-                <div>
-                  <label class="block text-[11px] font-semibold text-pink-400 mb-1">
-                    <i class="fa-brands fa-instagram"></i> INSTAGRAM (URL)
-                  </label>
-                  <input type="url" id="bandInstagram" placeholder="https://instagram.com/perfil" class="w-full px-3 py-2 bg-slate-800/90 border border-slate-700 rounded-xl text-xs text-white focus:border-pink-500 focus:outline-none">
-                </div>
-
-                <div>
-                  <label class="block text-[11px] font-semibold text-red-400 mb-1">
-                    <i class="fa-brands fa-youtube"></i> YOUTUBE (URL)
-                  </label>
-                  <input type="url" id="bandYoutube" placeholder="https://youtube.com/@canal" class="w-full px-3 py-2 bg-slate-800/90 border border-slate-700 rounded-xl text-xs text-white focus:border-red-500 focus:outline-none">
-                </div>
-
-                <div>
-                  <label class="block text-[11px] font-semibold text-cyan-400 mb-1">
-                    <i class="fa-brands fa-tiktok"></i> TIKTOK (URL)
-                  </label>
-                  <input type="url" id="bandTiktok" placeholder="https://tiktok.com/@perfil" class="w-full px-3 py-2 bg-slate-800/90 border border-slate-700 rounded-xl text-xs text-white focus:border-cyan-500 focus:outline-none">
-                </div>
+                <input type="url" id="bandSuaMusica" placeholder="Link Sua Música" class="w-full px-3 py-2 bg-slate-800/90 border border-slate-700 rounded-xl text-xs text-white">
+                <input type="url" id="bandInstagram" placeholder="Link Instagram" class="w-full px-3 py-2 bg-slate-800/90 border border-slate-700 rounded-xl text-xs text-white">
+                <input type="url" id="bandYoutube" placeholder="Link YouTube" class="w-full px-3 py-2 bg-slate-800/90 border border-slate-700 rounded-xl text-xs text-white">
+                <input type="url" id="bandTiktok" placeholder="Link TikTok" class="w-full px-3 py-2 bg-slate-800/90 border border-slate-700 rounded-xl text-xs text-white">
               </div>
             </div>
 
-            <!-- Biografia -->
             <div>
-              <label class="block text-xs font-bold text-slate-300 mb-1">RESUMO DA BANDA / REPERTÓRIO</label>
-              <textarea id="bandBio" rows="3" placeholder="Conte um pouco sobre o show, formação, repertório..." class="w-full px-3.5 py-2.5 bg-slate-800/90 border border-slate-700 rounded-xl text-sm text-white focus:border-brand-500 focus:outline-none"></textarea>
+              <label class="block text-xs font-bold text-slate-300 mb-1">BIOGRAFIA / REPERTÓRIO</label>
+              <textarea id="bandBio" rows="3" class="w-full px-3.5 py-2.5 bg-slate-800/90 border border-slate-700 rounded-xl text-sm text-white focus:border-brand-500 focus:outline-none"></textarea>
             </div>
 
             <div class="flex gap-2 pt-2">
-              <button type="submit" id="submitBtn" class="flex-1 py-3 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold rounded-xl text-sm shadow-lg shadow-brand-500/20 active:scale-98 transition-all flex items-center justify-center gap-2">
-                <i class="fa-solid fa-floppy-disk"></i>
-                <span id="submitBtnText">Salvar Cadastro</span>
+              <button type="submit" id="submitBtn" class="flex-1 py-3 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold rounded-xl text-sm shadow-lg shadow-brand-500/25 transition-all flex items-center justify-center gap-2">
+                <i class="fa-solid fa-floppy-disk"></i> <span id="submitBtnText">Salvar na Nuvem</span>
               </button>
-              <button type="button" onclick="resetForm()" class="px-4 py-3 bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold rounded-xl text-sm transition-all">
-                Limpar
-              </button>
+              <button type="button" onclick="resetForm()" class="px-4 py-3 bg-slate-800 text-slate-300 font-bold rounded-xl text-sm">Limpar</button>
             </div>
           </form>
         </div>
       </section>
 
-      <!-- ABA 3: MINHAS BANDAS / GERENCIAMENTO -->
+      <!-- ABA 3: GERENCIAR -->
       <section id="secManage" class="hidden space-y-4">
-        <div id="adminNotice" class="hidden bg-red-500/10 border border-red-500/20 p-4 rounded-2xl flex items-center gap-3 text-xs text-red-300">
-          <i class="fa-solid fa-shield-halved text-xl text-red-400 shrink-0"></i>
-          <div>
-            <p class="font-bold text-red-200">Modo Administrador Máster Ativo</p>
-            <p>Você tem controle total do catálogo e é o único autorizado a remover cadastros de bandas.</p>
-          </div>
-        </div>
-
-        <div id="manageBandsList" class="space-y-3">
-        </div>
+        <div id="manageBandsList" class="space-y-3"></div>
       </section>
-
     </main>
 
     <nav class="fixed bottom-0 left-0 right-0 z-40 bg-slate-950/90 backdrop-blur-md border-t border-slate-800/80 px-4 py-2">
       <div class="max-w-md mx-auto flex justify-around items-center">
-        <button id="navCatalog" onclick="switchNavTab('secCatalog')" class="flex flex-col items-center gap-1 text-brand-400 font-bold text-[11px] transition-all">
-          <i class="fa-solid fa-layer-group text-lg"></i>
-          <span>Catálogo</span>
-        </button>
-
-        <button id="navRegister" onclick="switchNavTab('secRegister')" class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-200 font-semibold text-[11px] transition-all">
-          <i class="fa-solid fa-circle-plus text-lg"></i>
-          <span>Cadastrar</span>
-        </button>
-
-        <button id="navManage" onclick="switchNavTab('secManage')" class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-200 font-semibold text-[11px] transition-all">
-          <i class="fa-solid fa-list-check text-lg"></i>
-          <span>Gerenciar</span>
-        </button>
+        <button id="navCatalog" onclick="switchNavTab('secCatalog')" class="flex flex-col items-center gap-1 text-brand-400 font-bold text-[11px]"><i class="fa-solid fa-layer-group text-lg"></i><span>Catálogo</span></button>
+        <button id="navRegister" onclick="switchNavTab('secRegister')" class="flex flex-col items-center gap-1 text-slate-400 font-semibold text-[11px]"><i class="fa-solid fa-circle-plus text-lg"></i><span>Cadastrar</span></button>
+        <button id="navManage" onclick="switchNavTab('secManage')" class="flex flex-col items-center gap-1 text-slate-400 font-semibold text-[11px]"><i class="fa-solid fa-list-check text-lg"></i><span>Gerenciar</span></button>
       </div>
     </nav>
-
   </div>
 
-  <!-- MODAL DETALHES -->
-  <div id="bandModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 hidden">
-    <div class="w-full max-w-md bg-slate-900 border border-slate-800 rounded-3xl p-5 shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto">
-      <div class="flex justify-between items-start border-b border-slate-800 pb-3">
-        <div class="pr-4">
-          <span id="modalGenre" class="text-[10px] font-extrabold uppercase tracking-wider bg-brand-500/20 text-brand-300 px-2.5 py-0.5 rounded-full border border-brand-500/30"></span>
-          <h2 id="modalTitle" class="text-xl font-black text-white mt-1"></h2>
-          <p id="modalCity" class="text-xs text-slate-400"><i class="fa-solid fa-location-dot text-slate-500 mr-1"></i></p>
-        </div>
-        <button onclick="closeModal()" class="w-8 h-8 rounded-full bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center shrink-0">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-
-      <img id="modalImg" class="w-full h-48 object-cover rounded-2xl border border-slate-800" src="" alt="Foto Banda">
-
-      <div>
-        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Contato / Empresário</p>
-        <p id="modalContact" class="text-sm font-semibold text-white"></p>
-      </div>
-
-      <div>
-        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Sobre a Banda</p>
-        <p id="modalBio" class="text-xs text-slate-300 leading-relaxed bg-slate-800/50 p-3 rounded-xl border border-slate-800"></p>
-      </div>
-
-      <div>
-        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Redes & Plataformas</p>
-        <div id="modalLinksGrid" class="grid grid-cols-2 gap-2">
-        </div>
-      </div>
-    </div>
-  </div>
-
+  <!-- SCRIPT APLICAÇÃO -->
   <script>
+    // CONFIGURAÇÃO DO SUPABASE (Substitua pelas suas chaves)
+    const SUPABASE_URL = "SUA_URL_DO_SUPABASE_AQUI";
+    const SUPABASE_KEY = "SUA_CHAVE_ANON_AQUI";
+    
+    let supabaseClient = null;
+    if (typeof supabase !== 'undefined' && SUPABASE_URL !== "SUA_URL_DO_SUPABASE_AQUI") {
+      supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+    }
+
     const ADMIN_USER = "JACIANO";
     const ADMIN_PASS = "Kricia10#";
-    const IMGBB_API_KEY = "6e66a0ed26069e86b3608b86d5277d3e"; 
 
     let currentUser = null;
     let selectedGenreFilter = "TODOS";
-    let compressedBase64 = "";
-
-    const genresList = [
-      "TODOS", "Pisadinha", "Arrocha", "Piseiro", "Brega", 
-      "Seresta", "Calypso", "Forró", "Sertanejo", "Pagode / Samba", 
-      "Pop / Rock", "Axé / Reggae", "Gospel", "Outros"
-    ];
-
-    const defaultBands = [
+    let cachedBands = [
       {
         id: "1",
         name: "Forró do Piseiro Supremo",
         genre: "Piseiro",
-        contactName: "Carlos Produções",
+        contact_name: "Carlos Produções",
         city: "Fortaleza / CE",
         whatsapp: "85999887766",
         photo: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&auto=format&fit=crop&q=80",
-        suaMusica: "https://suamusica.com.br",
+        sua_musica: "https://suamusica.com.br",
         instagram: "https://instagram.com",
         youtube: "https://youtube.com",
         tiktok: "https://tiktok.com",
@@ -431,34 +272,41 @@
       }
     ];
 
+    const genresList = ["TODOS", "Pisadinha", "Arrocha", "Piseiro", "Brega", "Seresta", "Calypso", "Forró", "Sertanejo", "Pagode / Samba", "Pop / Rock", "Axé / Reggae", "Gospel", "Outros"];
+
     window.addEventListener('DOMContentLoaded', () => {
-      initStorage();
+      initUsersStorage();
       checkSession();
       renderGenreFilterBar();
+      loadBandsFromSupabase();
     });
 
-    function initStorage() {
-      if (!localStorage.getItem('cadbanda_bands')) {
-        localStorage.setItem('cadbanda_bands', JSON.stringify(defaultBands));
-      }
+    function initUsersStorage() {
       if (!localStorage.getItem('cadbanda_users')) {
-        const initialUsers = [
-          { username: ADMIN_USER, password: ADMIN_PASS, role: 'admin' }
-        ];
-        localStorage.setItem('cadbanda_users', JSON.stringify(initialUsers));
+        localStorage.setItem('cadbanda_users', JSON.stringify([{ username: ADMIN_USER, password: ADMIN_PASS, role: 'admin' }]));
       }
     }
 
-    function getBands() {
-      return JSON.parse(localStorage.getItem('cadbanda_bands')) || [];
-    }
+    async function loadBandsFromSupabase() {
+      if (!supabaseClient) {
+        const localData = localStorage.getItem('cadbanda_bands');
+        if (localData) cachedBands = JSON.parse(localData);
+        renderCatalog();
+        return;
+      }
 
-    function saveBandsToStorage(bands) {
-      localStorage.setItem('cadbanda_bands', JSON.stringify(bands));
-    }
-
-    function getUsers() {
-      return JSON.parse(localStorage.getItem('cadbanda_users')) || [];
+      const { data, error } = await supabaseClient.from('bands').select('*');
+      if (error) {
+        console.error("Erro ao carregar dados do Supabase:", error.message);
+        return;
+      }
+      if (data && data.length > 0) {
+        cachedBands = data;
+      }
+      renderCatalog();
+      if (!document.getElementById('secManage').classList.contains('hidden')) {
+        renderManageList();
+      }
     }
 
     function checkSession() {
@@ -467,27 +315,11 @@
         currentUser = savedUser;
         document.getElementById('authScreen').classList.add('hidden');
         document.getElementById('mainApp').classList.remove('hidden');
-        updateUserUI();
-        renderCatalog();
-        renderManageList();
+        document.getElementById('adminBadge').classList.toggle('hidden', currentUser.role !== 'admin');
       } else {
         document.getElementById('authScreen').classList.remove('hidden');
         document.getElementById('mainApp').classList.add('hidden');
       }
-    }
-
-    function switchAuthTab(tab) {
-      const isLogin = tab === 'login';
-      document.getElementById('loginForm').classList.toggle('hidden', !isLogin);
-      document.getElementById('registerForm').classList.toggle('hidden', isLogin);
-
-      document.getElementById('tabLoginBtn').className = isLogin 
-        ? "flex-1 py-2 text-xs font-bold rounded-lg transition-all text-white bg-slate-700 shadow-sm"
-        : "flex-1 py-2 text-xs font-bold rounded-lg transition-all text-slate-400 hover:text-white";
-
-      document.getElementById('tabRegisterBtn').className = !isLogin 
-        ? "flex-1 py-2 text-xs font-bold rounded-lg transition-all text-white bg-slate-700 shadow-sm"
-        : "flex-1 py-2 text-xs font-bold rounded-lg transition-all text-slate-400 hover:text-white";
     }
 
     function handleLogin(e) {
@@ -495,20 +327,21 @@
       const user = document.getElementById('loginUser').value.trim();
       const pass = document.getElementById('loginPass').value.trim();
 
+      // Comparação insensível a maiúsculas/minúsculas para o usuário JACIANO
       if (user.toUpperCase() === ADMIN_USER.toUpperCase() && pass === ADMIN_PASS) {
-        const sessionData = { username: ADMIN_USER, role: 'admin' };
-        localStorage.setItem('cadbanda_session', JSON.stringify(sessionData));
+        localStorage.setItem('cadbanda_session', JSON.stringify({ username: ADMIN_USER, role: 'admin' }));
         checkSession();
+        loadBandsFromSupabase();
         return;
       }
 
-      const users = getUsers();
+      const users = JSON.parse(localStorage.getItem('cadbanda_users')) || [];
       const found = users.find(u => u.username.toLowerCase() === user.toLowerCase() && u.password === pass);
 
       if (found) {
-        const sessionData = { username: found.username, role: 'user' };
-        localStorage.setItem('cadbanda_session', JSON.stringify(sessionData));
+        localStorage.setItem('cadbanda_session', JSON.stringify({ username: found.username, role: 'user' }));
         checkSession();
+        loadBandsFromSupabase();
       } else {
         alert("Usuário ou senha incorretos!");
       }
@@ -518,66 +351,35 @@
       e.preventDefault();
       const user = document.getElementById('regUser').value.trim();
       const pass = document.getElementById('regPass').value.trim();
+      const users = JSON.parse(localStorage.getItem('cadbanda_users')) || [];
 
-      if (user.toUpperCase() === ADMIN_USER.toUpperCase()) {
-        alert("Este nome de usuário é reservado ao Administrador Master!");
-        return;
-      }
-
-      const users = getUsers();
       if (users.some(u => u.username.toLowerCase() === user.toLowerCase())) {
-        alert("Este usuário já existe! Escolha outro nome.");
+        alert("Este usuário já existe!");
         return;
       }
 
-      const newUser = { username: user, password: pass, role: 'user' };
-      users.push(newUser);
+      users.push({ username: user, password: pass, role: 'user' });
       localStorage.setItem('cadbanda_users', JSON.stringify(users));
-
-      alert("Conta criada com sucesso! Faça login para continuar.");
-      document.getElementById('regUser').value = "";
-      document.getElementById('regPass').value = "";
+      alert("Conta criada com sucesso! Faça login.");
       switchAuthTab('login');
     }
 
     function logout() {
       localStorage.removeItem('cadbanda_session');
-      currentUser = null;
       checkSession();
     }
 
-    function updateUserUI() {
-      if (!currentUser) return;
-      const isAdmin = currentUser.role === 'admin';
-
-      document.getElementById('userNameDisplay').textContent = currentUser.username;
-      document.getElementById('userRoleDisplay').textContent = isAdmin ? "Administrador Máster" : "Artista / Usuário";
-      document.getElementById('adminBadge').classList.toggle('hidden', !isAdmin);
-      document.getElementById('adminNotice').classList.toggle('hidden', !isAdmin);
+    function switchAuthTab(tab) {
+      const isLogin = tab === 'login';
+      document.getElementById('loginForm').classList.toggle('hidden', !isLogin);
+      document.getElementById('registerForm').classList.toggle('hidden', isLogin);
     }
 
     function switchNavTab(secId) {
       document.getElementById('secCatalog').classList.add('hidden');
       document.getElementById('secRegister').classList.add('hidden');
       document.getElementById('secManage').classList.add('hidden');
-
       document.getElementById(secId).classList.remove('hidden');
-
-      const tabs = ['secCatalog', 'secRegister', 'secManage'];
-      const btnMap = {
-        'secCatalog': 'navCatalog',
-        'secRegister': 'navRegister',
-        'secManage': 'navManage'
-      };
-
-      tabs.forEach(t => {
-        const btn = document.getElementById(btnMap[t]);
-        if (t === secId) {
-          btn.className = "flex flex-col items-center gap-1 text-brand-400 font-bold text-[11px] transition-all";
-        } else {
-          btn.className = "flex flex-col items-center gap-1 text-slate-400 hover:text-slate-200 font-semibold text-[11px] transition-all";
-        }
-      });
 
       if (secId === 'secCatalog') renderCatalog();
       if (secId === 'secManage') renderManageList();
@@ -585,18 +387,9 @@
 
     function renderGenreFilterBar() {
       const container = document.getElementById('genreFilterBar');
-      container.innerHTML = genresList.map(g => {
-        const isActive = g === selectedGenreFilter;
-        return `
-          <button onclick="setGenreFilter('${g}')" class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold whitespace-nowrap transition-all ${
-            isActive 
-              ? 'bg-brand-500 text-slate-950 shadow-md shadow-brand-500/20' 
-              : 'bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800'
-          }">
-            ${g}
-          </button>
-        `;
-      }).join('');
+      container.innerHTML = genresList.map(g => `
+        <button onclick="setGenreFilter('${g}')" class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold whitespace-nowrap transition-all ${g === selectedGenreFilter ? 'bg-brand-500 text-slate-950 shadow-md' : 'bg-slate-900 border border-slate-800 text-slate-400'}">${g}</button>
+      `).join('');
     }
 
     function setGenreFilter(genre) {
@@ -606,315 +399,129 @@
     }
 
     function renderCatalog() {
-      const bands = getBands();
       const search = document.getElementById('searchInput').value.toLowerCase();
       const grid = document.getElementById('bandsGrid');
 
-      const filtered = bands.filter(b => {
+      const filtered = cachedBands.filter(b => {
         const matchGenre = selectedGenreFilter === "TODOS" || b.genre === selectedGenreFilter;
-        const matchSearch = b.name.toLowerCase().includes(search) ||
-                            b.contactName.toLowerCase().includes(search) ||
-                            b.city.toLowerCase().includes(search) ||
-                            b.genre.toLowerCase().includes(search);
+        const matchSearch = b.name.toLowerCase().includes(search) || b.contact_name?.toLowerCase().includes(search) || b.city?.toLowerCase().includes(search);
         return matchGenre && matchSearch;
       });
 
       if (filtered.length === 0) {
-        grid.innerHTML = `
-          <div class="col-span-full text-center py-12 text-slate-500 space-y-2">
-            <i class="fa-solid fa-compact-disc text-4xl"></i>
-            <p class="text-sm font-semibold">Nenhuma banda encontrada neste filtro.</p>
-          </div>
-        `;
+        grid.innerHTML = `<div class="col-span-full text-center py-12 text-slate-500"><i class="fa-solid fa-compact-disc text-4xl mb-2"></i><p>Nenhuma banda encontrada.</p></div>`;
         return;
       }
 
-      grid.innerHTML = filtered.map(b => {
-        const imgUrl = b.photo || 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&auto=format&fit=crop&q=80';
-        const waClean = b.whatsapp.replace(/\D/g, '');
-        const waMsg = encodeURIComponent(`Olá, vi seu anúncio no CAD BANDA e gostaria de informações sobre shows!`);
-
-        return `
-          <div class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden hover:border-slate-700 transition-all flex flex-col justify-between">
-            <div>
-              <div class="relative h-44 overflow-hidden">
-                <img src="${imgUrl}" alt="${b.name}" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
-                <span class="absolute top-3 left-3 text-[10px] font-extrabold uppercase bg-slate-950/80 backdrop-blur-md text-brand-400 px-2.5 py-1 rounded-full border border-slate-800">
-                  ${b.genre}
-                </span>
-              </div>
-
-              <div class="p-4 space-y-3">
-                <div>
-                  <h3 class="text-base font-extrabold text-white leading-snug">${b.name}</h3>
-                  <p class="text-xs text-slate-400 mt-0.5"><i class="fa-solid fa-location-dot text-slate-500 mr-1"></i>${b.city}</p>
-                </div>
-
-                <div class="bg-slate-800/50 p-2.5 rounded-xl border border-slate-800 text-xs space-y-1">
-                  <p class="text-slate-400"><span class="text-slate-500">Contato:</span> <strong class="text-slate-200">${b.contactName}</strong></p>
-                </div>
-
-                <div class="grid grid-cols-5 gap-1.5 pt-1">
-                  <a href="https://wa.me/55${waClean}?text=${waMsg}" target="_blank" class="py-2 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 rounded-xl flex items-center justify-center text-sm transition-all" title="WhatsApp">
-                    <i class="fa-brands fa-whatsapp"></i>
-                  </a>
-
-                  ${b.suaMusica ? `
-                    <a href="${b.suaMusica}" target="_blank" class="py-2 bg-emerald-400/10 hover:bg-emerald-400/20 border border-emerald-400/30 text-emerald-300 rounded-xl flex items-center justify-center text-sm transition-all" title="Sua Música">
-                      <i class="fa-solid fa-compact-disc"></i>
-                    </a>
-                  ` : `
-                    <div class="py-2 bg-slate-800/40 border border-slate-800 text-slate-600 rounded-xl flex items-center justify-center text-sm cursor-not-allowed">
-                      <i class="fa-solid fa-compact-disc"></i>
-                    </div>
-                  `}
-
-                  ${b.instagram ? `
-                    <a href="${b.instagram}" target="_blank" class="py-2 bg-pink-500/10 hover:bg-pink-500/20 border border-pink-500/30 text-pink-400 rounded-xl flex items-center justify-center text-sm transition-all" title="Instagram">
-                      <i class="fa-brands fa-instagram"></i>
-                    </a>
-                  ` : `
-                    <div class="py-2 bg-slate-800/40 border border-slate-800 text-slate-600 rounded-xl flex items-center justify-center text-sm cursor-not-allowed">
-                      <i class="fa-brands fa-instagram"></i>
-                    </div>
-                  `}
-
-                  ${b.youtube ? `
-                    <a href="${b.youtube}" target="_blank" class="py-2 bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 text-red-400 rounded-xl flex items-center justify-center text-sm transition-all" title="YouTube">
-                      <i class="fa-brands fa-youtube"></i>
-                    </a>
-                  ` : `
-                    <div class="py-2 bg-slate-800/40 border border-slate-800 text-slate-600 rounded-xl flex items-center justify-center text-sm cursor-not-allowed">
-                      <i class="fa-brands fa-youtube"></i>
-                    </div>
-                  `}
-
-                  ${b.tiktok ? `
-                    <a href="${b.tiktok}" target="_blank" class="py-2 bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-cyan-400 rounded-xl flex items-center justify-center text-sm transition-all" title="TikTok">
-                      <i class="fa-brands fa-tiktok"></i>
-                    </a>
-                  ` : `
-                    <div class="py-2 bg-slate-800/40 border border-slate-800 text-slate-600 rounded-xl flex items-center justify-center text-sm cursor-not-allowed">
-                      <i class="fa-brands fa-tiktok"></i>
-                    </div>
-                  `}
-                </div>
-              </div>
+      grid.innerHTML = filtered.map(b => `
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden flex flex-col justify-between">
+          <div>
+            <div class="relative h-44 overflow-hidden">
+              <img src="${b.photo || 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&auto=format&fit=crop&q=80'}" class="w-full h-full object-cover">
+              <span class="absolute top-3 left-3 text-[10px] font-extrabold uppercase bg-slate-950/80 text-brand-400 px-2.5 py-1 rounded-full">${b.genre}</span>
             </div>
-
-            <div class="p-4 pt-0">
-              <button onclick="openModal('${b.id}')" class="w-full py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold rounded-xl text-xs transition-all flex items-center justify-center gap-2">
-                <i class="fa-solid fa-circle-info"></i>
-                Ver Ficha Completa
-              </button>
+            <div class="p-4 space-y-2">
+              <h3 class="text-base font-extrabold text-white">${b.name}</h3>
+              <p class="text-xs text-slate-400"><i class="fa-solid fa-location-dot mr-1"></i>${b.city}</p>
+              <p class="text-xs text-slate-400">Contato: <strong class="text-slate-200">${b.contact_name || b.contactName || ''}</strong></p>
             </div>
           </div>
-        `;
-      }).join('');
-    }
-
-    function renderManageList() {
-      const bands = getBands();
-      const container = document.getElementById('manageBandsList');
-      const isAdmin = currentUser && currentUser.role === 'admin';
-
-      if (bands.length === 0) {
-        container.innerHTML = `
-          <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 text-center text-slate-500">
-            Nenhuma banda cadastrada para gerenciamento.
+          <div class="p-4 pt-0">
+            <a href="https://wa.me/55${b.whatsapp?.replace(/\D/g, '')}" target="_blank" class="w-full py-2.5 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 rounded-xl font-bold text-xs flex items-center justify-center gap-2">
+              <i class="fa-brands fa-whatsapp text-sm"></i> Chamar no WhatsApp
+            </a>
           </div>
-        `;
-        return;
-      }
-
-      container.innerHTML = bands.map(b => {
-        const deleteButtonHTML = isAdmin ? `
-          <button onclick="deleteBand('${b.id}')" class="px-3 py-2 bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 text-red-400 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5" title="Excluir cadastro">
-            <i class="fa-solid fa-trash-can"></i>
-            <span>Excluir</span>
-          </button>
-        ` : `
-          <span class="text-[10px] text-slate-600 italic border border-slate-800 px-2 py-1 rounded-lg">Exclusão restrita ao Admin</span>
-        `;
-
-        return `
-          <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex items-center justify-between gap-3">
-            <div class="flex items-center gap-3 overflow-hidden">
-              <img src="${b.photo || 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&auto=format&fit=crop&q=80'}" class="w-12 h-12 rounded-xl object-cover shrink-0 border border-slate-800" alt="Thumb">
-              <div class="truncate">
-                <h4 class="font-extrabold text-sm text-white truncate">${b.name}</h4>
-                <p class="text-xs text-slate-400">${b.genre} • ${b.city}</p>
-              </div>
-            </div>
-
-            <div class="flex items-center gap-2 shrink-0">
-              <button onclick="editBand('${b.id}')" class="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5">
-                <i class="fa-solid fa-pen"></i>
-                <span>Editar</span>
-              </button>
-              ${deleteButtonHTML}
-            </div>
-          </div>
-        `;
-      }).join('');
+        </div>
+      `).join('');
     }
 
-    // COMPRESSÃO E PROCESSAMENTO DA IMAGEM
-    function processAndPreviewImage(event) {
-      const file = event.target.files[0];
-      if (!file) return;
-
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        const img = new Image();
-        img.onload = function() {
-          const canvas = document.createElement('canvas');
-          let width = img.width;
-          let height = img.height;
-          const maxDim = 1000; // Redimensiona para resolução ideal de exibição
-
-          if (width > height && width > maxDim) {
-            height = Math.round((height * maxDim) / width);
-            width = maxDim;
-          } else if (height > maxDim) {
-            width = Math.round((width * maxDim) / height);
-            height = maxDim;
-          }
-
-          canvas.width = width;
-          canvas.height = height;
-          const ctx = canvas.getContext('2d');
-          ctx.drawImage(img, 0, 0, width, height);
-
-          // Gera imagem leve em JPG otimizado
-          const dataUrl = canvas.toDataURL('image/jpeg', 0.82);
-          compressedBase64 = dataUrl.split(',')[1];
-
-          document.getElementById('imagePreview').src = dataUrl;
-          document.getElementById('imagePreviewContainer').classList.remove('hidden');
-        };
-        img.src = e.target.result;
-      };
-      reader.readAsDataURL(file);
-    }
-
-    // ENVIO SEGURO PARA A NUVEM
-    async function uploadImageToCloud() {
-      if (!compressedBase64) return document.getElementById('bandPhotoUrl').value;
-
-      const formData = new FormData();
-      formData.append("image", compressedBase64);
-
-      try {
-        const response = await fetch(`https://api.imgbb.com/1/upload?key=${IMGBB_API_KEY}`, {
-          method: "POST",
-          body: formData
-        });
-
-        const data = await response.json();
-        if (data.success) {
-          return data.data.url;
-        } else {
-          alert("Servidor de imagens indisponível no momento. Tente novamente.");
-          return "";
-        }
-      } catch (err) {
-        console.error("Erro no Upload ImgBB:", err);
-        alert("Erro de conexão ao enviar imagem. Verifique a internet.");
-        return "";
-      }
-    }
-
-    async function saveBand(e) {
+    async function saveBandToSupabase(e) {
       e.preventDefault();
+      const submitBtnText = document.getElementById('submitBtnText');
+      submitBtnText.textContent = "Salvando...";
 
       const fileInput = document.getElementById('bandPhotoFile');
       let photoUrl = document.getElementById('bandPhotoUrl').value;
-      const submitBtn = document.getElementById('submitBtn');
-      const submitBtnText = document.getElementById('submitBtnText');
 
-      if (fileInput.files.length > 0 && compressedBase64) {
-        submitBtn.disabled = true;
-        submitBtnText.textContent = "Enviando foto para a nuvem...";
-        photoUrl = await uploadImageToCloud();
+      if (fileInput.files.length > 0 && supabaseClient) {
+        const file = fileInput.files[0];
+        const fileName = `${Date.now()}_${file.name}`;
+        const { data: uploadData, error: uploadError } = await supabaseClient.storage.from('band-photos').upload(fileName, file);
         
-        submitBtn.disabled = false;
-        submitBtnText.textContent = "Salvar Cadastro";
-
-        if (!photoUrl) return;
+        if (!uploadError) {
+          const { data: urlData } = supabaseClient.storage.from('band-photos').getPublicUrl(fileName);
+          photoUrl = urlData.publicUrl;
+        }
       }
 
-      const bands = getBands();
-      const editId = document.getElementById('editBandId').value;
-
       const bandData = {
-        id: editId || Date.now().toString(),
+        id: document.getElementById('editBandId').value || Date.now().toString(),
         name: document.getElementById('bandName').value.trim(),
         genre: document.getElementById('bandGenre').value,
-        contactName: document.getElementById('bandContact').value.trim(),
+        contact_name: document.getElementById('bandContact').value.trim(),
         city: document.getElementById('bandCity').value.trim(),
         whatsapp: document.getElementById('bandWhatsapp').value.trim(),
         photo: photoUrl || 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&auto=format&fit=crop&q=80',
-        suaMusica: document.getElementById('bandSuaMusica').value.trim(),
+        sua_musica: document.getElementById('bandSuaMusica').value.trim(),
         instagram: document.getElementById('bandInstagram').value.trim(),
         youtube: document.getElementById('bandYoutube').value.trim(),
         tiktok: document.getElementById('bandTiktok').value.trim(),
         bio: document.getElementById('bandBio').value.trim(),
-        owner: currentUser ? currentUser.username : "Anônimo"
+        owner: currentUser?.username || "Anônimo"
       };
 
-      if (editId) {
-        const index = bands.findIndex(b => b.id === editId);
-        if (index !== -1) bands[index] = bandData;
+      if (supabaseClient) {
+        const { error } = await supabaseClient.from('bands').upsert([bandData]);
+        if (error) {
+          alert("Erro ao salvar no banco Supabase: " + error.message);
+        } else {
+          alert("Salvo com sucesso na nuvem!");
+        }
       } else {
-        bands.unshift(bandData);
+        cachedBands.unshift(bandData);
+        localStorage.setItem('cadbanda_bands', JSON.stringify(cachedBands));
+        alert("Salvo localmente com sucesso!");
       }
 
-      saveBandsToStorage(bands);
+      submitBtnText.textContent = "Salvar na Nuvem";
       resetForm();
-      alert(editId ? "Cadastro atualizado com sucesso!" : "Banda cadastrada e foto salva na nuvem!");
+      loadBandsFromSupabase();
       switchNavTab('secCatalog');
     }
 
-    function editBand(id) {
-      const bands = getBands();
-      const b = bands.find(item => item.id === id);
-      if (!b) return;
+    function renderManageList() {
+      const container = document.getElementById('manageBandsList');
+      const isAdmin = currentUser?.role === 'admin';
 
-      document.getElementById('editBandId').value = b.id;
-      document.getElementById('bandName').value = b.name;
-      document.getElementById('bandGenre').value = b.genre;
-      document.getElementById('bandContact').value = b.contactName;
-      document.getElementById('bandCity').value = b.city;
-      document.getElementById('bandWhatsapp').value = b.whatsapp;
-      document.getElementById('bandPhotoUrl').value = b.photo || "";
-      document.getElementById('bandSuaMusica').value = b.suaMusica || "";
-      document.getElementById('bandInstagram').value = b.instagram || "";
-      document.getElementById('bandYoutube').value = b.youtube || "";
-      document.getElementById('bandTiktok').value = b.tiktok || "";
-      document.getElementById('bandBio').value = b.bio || "";
-
-      if (b.photo) {
-        document.getElementById('imagePreview').src = b.photo;
-        document.getElementById('imagePreviewContainer').classList.remove('hidden');
-      }
-
-      switchNavTab('secRegister');
-    }
-
-    function deleteBand(id) {
-      if (!currentUser || currentUser.role !== 'admin') {
-        alert("Apenas o Administrador Geral pode excluir bandas!");
+      if (cachedBands.length === 0) {
+        container.innerHTML = `<div class="p-8 text-center text-slate-500">Nenhuma banda cadastrada.</div>`;
         return;
       }
 
-      if (confirm("Tem certeza que deseja excluir esta banda do catálogo permanentemente?")) {
-        let bands = getBands();
-        bands = bands.filter(b => b.id !== id);
-        saveBandsToStorage(bands);
-        renderManageList();
-        renderCatalog();
+      container.innerHTML = cachedBands.map(b => `
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex items-center justify-between gap-3">
+          <div class="flex items-center gap-3 overflow-hidden">
+            <img src="${b.photo}" class="w-12 h-12 rounded-xl object-cover shrink-0">
+            <div class="truncate">
+              <h4 class="font-extrabold text-sm text-white truncate">${b.name}</h4>
+              <p class="text-xs text-slate-400">${b.genre} • ${b.city}</p>
+            </div>
+          </div>
+          ${isAdmin ? `<button onclick="deleteBand('${b.id}')" class="px-3 py-2 bg-red-500/10 border border-red-500/30 text-red-400 rounded-xl text-xs font-bold"><i class="fa-solid fa-trash"></i> Excluir</button>` : ''}
+        </div>
+      `).join('');
+    }
+
+    async function deleteBand(id) {
+      if (confirm("Deseja realmente excluir esta banda?")) {
+        if (supabaseClient) {
+          const { error } = await supabaseClient.from('bands').delete().eq('id', id);
+          if (error) alert("Erro ao excluir: " + error.message);
+        } else {
+          cachedBands = cachedBands.filter(b => b.id !== id);
+          localStorage.setItem('cadbanda_bands', JSON.stringify(cachedBands));
+        }
+        loadBandsFromSupabase();
       }
     }
 
@@ -922,61 +529,6 @@
       document.getElementById('bandForm').reset();
       document.getElementById('editBandId').value = "";
       document.getElementById('bandPhotoUrl').value = "";
-      compressedBase64 = "";
-      document.getElementById('imagePreviewContainer').classList.add('hidden');
-    }
-
-    function openModal(id) {
-      const bands = getBands();
-      const b = bands.find(item => item.id === id);
-      if (!b) return;
-
-      document.getElementById('modalTitle').textContent = b.name;
-      document.getElementById('modalGenre').textContent = b.genre;
-      document.getElementById('modalCity').innerHTML = `<i class="fa-solid fa-location-dot text-slate-500 mr-1"></i> ${b.city}`;
-      document.getElementById('modalContact').textContent = b.contactName;
-      document.getElementById('modalBio').textContent = b.bio || "Nenhum detalhe adicional informado.";
-      document.getElementById('modalImg').src = b.photo || 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&auto=format&fit=crop&q=80';
-
-      const waClean = b.whatsapp.replace(/\D/g, '');
-      const waMsg = encodeURIComponent(`Olá, vi seu anúncio no CAD BANDA!`);
-
-      const linksGrid = document.getElementById('modalLinksGrid');
-      linksGrid.innerHTML = `
-        <a href="https://wa.me/55${waClean}?text=${waMsg}" target="_blank" class="p-2.5 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 rounded-xl text-xs font-bold flex items-center justify-center gap-2">
-          <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
-        </a>
-
-        ${b.suaMusica ? `
-          <a href="${b.suaMusica}" target="_blank" class="p-2.5 bg-emerald-400/10 border border-emerald-400/30 text-emerald-300 rounded-xl text-xs font-bold flex items-center justify-center gap-2">
-            <i class="fa-solid fa-compact-disc text-sm"></i> Sua Música
-          </a>
-        ` : ''}
-
-        ${b.instagram ? `
-          <a href="${b.instagram}" target="_blank" class="p-2.5 bg-pink-500/10 border border-pink-500/30 text-pink-400 rounded-xl text-xs font-bold flex items-center justify-center gap-2">
-            <i class="fa-brands fa-instagram text-sm"></i> Instagram
-          </a>
-        ` : ''}
-
-        ${b.youtube ? `
-          <a href="${b.youtube}" target="_blank" class="p-2.5 bg-red-500/10 border border-red-500/30 text-red-400 rounded-xl text-xs font-bold flex items-center justify-center gap-2">
-            <i class="fa-brands fa-youtube text-sm"></i> YouTube
-          </a>
-        ` : ''}
-
-        ${b.tiktok ? `
-          <a href="${b.tiktok}" target="_blank" class="p-2.5 bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 rounded-xl text-xs font-bold flex items-center justify-center gap-2">
-            <i class="fa-brands fa-tiktok text-sm"></i> TikTok
-          </a>
-        ` : ''}
-      `;
-
-      document.getElementById('bandModal').classList.remove('hidden');
-    }
-
-    function closeModal() {
-      document.getElementById('bandModal').classList.add('hidden');
     }
   </script>
 </body>
